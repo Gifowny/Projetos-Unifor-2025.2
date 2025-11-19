@@ -10,7 +10,7 @@ public abstract class ConsoleView {
         System.out.println("-".repeat(80));
     }
 
-    protected void exibirCabecalho(String titulo) {
+    public void exibirCabecalho(String titulo) {
         System.out.println();
         exibirLinha();
         System.out.println(centralizarTexto(titulo, 80));

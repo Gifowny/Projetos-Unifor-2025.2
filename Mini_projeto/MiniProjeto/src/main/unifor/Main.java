@@ -1,17 +1,55 @@
 
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import config.ApplicationConfig;
+import controller.MenuController;
+import exception.ExceptionHandler;
+import util.Logger;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+/**
+ * Classe principal da aplicação Academic Gateway System.
+ *
+ * Responsável por:
+ * - Inicializar a aplicação
+ * - Configurar dependências
+ * - Iniciar o menu principal
+ *
+ * Padrões aplicados:
+ * - GRASP: Controller - Ponto de entrada da aplicação
+ * - SOLID: SRP - Responsável apenas por inicializar o sistema
+ */
+public class Main {
+
+    private static final Logger logger = Logger.getInstance();
+
+    public static void main(String[] args) {
+        logger.info("=".repeat(60));
+        logger.info("ACADEMIC GATEWAY SYSTEM - UNIFOR");
+        logger.info("Sistema de Gestão Acadêmica - Projeto de Arquitetura");
+        logger.info("=".repeat(60));
+
+        try {
+            // Inicializa configurações da aplicação
+            ApplicationConfig config = ApplicationConfig.getInstance();
+            logger.info("Configurações carregadas com sucesso");
+
+            // Inicializa o controlador do menu principal
+            MenuController menuController = new MenuController();
+
+            logger.info("Sistema inicializado com sucesso!");
+            logger.info("");
+
+            // Inicia o loop principal do menu
+            menuController.exibirMenuPrincipal();
+
+        } catch (Exception e) {
+            logger.error("Erro crítico ao inicializar aplicação: " + e.getMessage());
+            ExceptionHandler.handleException(e);
+            System.exit(1);
+        } finally {
+            logger.info("");
+            logger.info("=".repeat(60));
+            logger.info("Aplicação encerrada");
+            logger.info("=".repeat(60));
         }
     }
 }
