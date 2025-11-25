@@ -528,38 +528,6 @@ mvn clean install
 
 ---
 
-## 📝 Melhorias Futuras (Bônus)
-
-### 🎁 Implementação com Banco de Dados (+Pontos)
-
-- PostgreSQL ou MySQL para persistência real
-- Spring Data JPA para mapeamento objeto-relacional
-- Scripts de migração com Flyway
-
-### 🎨 Interface Gráfica
-
-- JavaFX para desktop
-- Spring Boot + Thymeleaf para web
-
-### 🔒 Segurança
-
-- Autenticação e autorização (Spring Security)
-- Criptografia de dados sensíveis
-
-### 📊 Observabilidade
-
-- Métricas com Micrometer
-- Tracing distribuído com Sleuth
-- Dashboard com Grafana
-
-### 🧪 Testes
-
-- Testes unitários com JUnit 5
-- Testes de integração com Mockito
-- Cobertura de código com JaCoCo
-
----
-
 ## 👨‍💻 Autor
 
 **Diogo Gifoni**  
@@ -583,7 +551,7 @@ Este projeto foi desenvolvido para fins acadêmicos como parte da disciplina de 
 
 ---
 
-**📅 Data de Entrega**: 19/11  
+**📅 Data de Entrega**: 25/11  
 **✅ Status**: Completo e Funcional  
 **📦 Total de Classes**: 82  
 **⭐ Qualidade**: Produção-Ready
